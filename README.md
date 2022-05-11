@@ -1,7 +1,9 @@
 Using: python 3.10.4
 
 Package need setting:
+
 pip install opencv-python
+
 python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
 
 Using:
