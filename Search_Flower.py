@@ -60,7 +60,8 @@ def search_Flower():
 
 	Feat_Color = ExtractFeature_ColorDescriptor((8, 12, 3))
 
-	image = cv2.imread("Train/calendula/555844_fd11e5282b_c.jpg")
+	image = cv2.imread("./279581152_961779464419830_7933107883665669983_n.jpg")
+
 	img_resize = cv2.resize(image, (600,600))
 	if img_resize is None:
 		return None
@@ -76,9 +77,10 @@ def search_Flower():
 	if similarity_sort[0] >0.65:
 		text = "No database -" + " Similarity: " + str(round(similarity_sort[0], 2)) + "-" + Name_class[indexs_sort[0]]
 	else:
-		text = "Label: " + Name_class[indexs_sort[0]] + " Similarity: " + str(round(similarity_sort[0], 2))
-	cv2.putText(image_query,text, (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-	cv2.imshow("Image Search", image_query)
+		text = "Label: " + Name_class[indexs_sort[0]] + " Similarity: " + str(similarity_sort[0])
+	print("similarity_sort",similarity_sort)
+	cv2.putText(img_resize,text, (50,50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+	cv2.imshow("Image Search", img_resize)
 	cv2.waitKey(0)
 
 if __name__ == '__main__':
